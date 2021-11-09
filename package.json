@@ -1,0 +1,46 @@
+{
+  "name": "minari",
+  "version": "2.0.1",
+  "description": "a discord bot that A discord bot that uses ai to have a normal conversation with the user on vc",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruriko123/Minari-chan.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "minari",
+    "voice",
+    "chat",
+    "response"
+  ],
+  "author": "ruriko123",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ruriko123/Minari-chan/issues"
+  },
+  "homepage": "https://github.com/ruriko123/Minari-chan#readme",
+  "dependencies": {
+    "@discordjs/opus": "^0.5.3",
+    "@tensorflow/tfjs-node": "^3.11.0",
+    "@types/got": "^9.6.12",
+    "axios": "^0.24.0",
+    "discord.js": "^12.5.3",
+    "ffmpeg-static": "^4.4.0",
+    "got": "^11.8.2",
+    "microsoft-cognitiveservices-speech-sdk": "^1.18.0",
+    "node-gtts": "^2.0.2",
+    "nodemon": "^2.0.14",
+    "nsfwjs": "^2.4.1",
+    "python-shell": "^3.0.1",
+    "wav-converter": "^1.0.0",
+    "wavefile": "^11.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  }
+}
