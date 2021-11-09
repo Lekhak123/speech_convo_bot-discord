@@ -64,7 +64,7 @@ client.on('message', async message => {
           setTimeout(function () {
             onCooldown = false;
           }, 8000);
-          await message.channel.send(`I'm listening to <@${user}>`);
+          await message.channel.send(`"<@" + user + "> You can start speaking"`);
           const voicechannel = message.member.voice.channel;
           if (!voicechannel) {
             await message.channel.send("Please join a voice channel first!"); return;
