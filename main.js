@@ -194,7 +194,7 @@ client.on('message', function (message) { return __awaiter(void 0, void 0, void 
                                 setTimeout(function () {
                                     onCooldown = false;
                                 }, 8000);
-                                return [4 /*yield*/, message.channel.send("I'm listening to <@" + user + ">")];
+                                return [4 /*yield*/, message.channel.send("<@" + user + "> You can start speaking")];
                             case 2:
                                 _a.sent();
                                 voicechannel = message.member.voice.channel;
