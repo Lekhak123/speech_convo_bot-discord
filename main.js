@@ -60,8 +60,6 @@ var fs = require("fs");
 var stream_1 = require("stream");
 var SILENCE_FRAME = Buffer.from([0xF8, 0xFF, 0xFE]);
 var _a = require("./config.json"), prefix = _a.prefix, token = _a.token, text_channel = _a.text_channel;
-var tf = require('@tensorflow/tfjs-node');
-var nsfw = require('nsfwjs');
 var axios = require('axios');
 var WaveFile = require('wavefile').WaveFile;
 var Silence = /** @class */ (function (_super) {
@@ -101,63 +99,6 @@ client.on('message', function (message) { return __awaiter(void 0, void 0, void 
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                if (message.attachments.size > 0) {
-                    message.attachments.forEach(function (Attachment) { return __awaiter(void 0, void 0, void 0, function () {
-                        function fn() {
-                            return __awaiter(this, void 0, void 0, function () {
-                                var pic, model, image, predictions, rule, unholy_1, e_1;
-                                return __generator(this, function (_a) {
-                                    switch (_a.label) {
-                                        case 0: return [4 /*yield*/, axios.get(link, {
-                                                responseType: 'arraybuffer'
-                                            })];
-                                        case 1:
-                                            pic = _a.sent();
-                                            _a.label = 2;
-                                        case 2:
-                                            _a.trys.push([2, 6, , 7]);
-                                            return [4 /*yield*/, nsfw.load()];
-                                        case 3:
-                                            model = _a.sent();
-                                            return [4 /*yield*/, tf.node.decodeImage(pic.data, 3)];
-                                        case 4:
-                                            image = _a.sent();
-                                            return [4 /*yield*/, model.classify(image)];
-                                        case 5:
-                                            predictions = _a.sent();
-                                            image.dispose();
-                                            console.log(predictions);
-                                            rule = predictions;
-                                            unholy_1 = "\n  a\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA\n";
-                                            rule.forEach(function (item) {
-                                                if (item.className == "Hentai" && item.probability >= 0.6) {
-                                                    message.channel.send(unholy_1);
-                                                }
-                                                if (item.className == "Porn" && item.probability >= 0.6) {
-                                                    message.channel.send(unholy_1);
-                                                }
-                                                if (item.className == "Sexy" && item.probability >= 0.6) {
-                                                    message.channel.send(unholy_1);
-                                                }
-                                            });
-                                            return [3 /*break*/, 7];
-                                        case 6:
-                                            e_1 = _a.sent();
-                                            console.log(e_1);
-                                            return [3 /*break*/, 7];
-                                        case 7: return [2 /*return*/];
-                                    }
-                                });
-                            });
-                        }
-                        var link;
-                        return __generator(this, function (_a) {
-                            link = Attachment.url;
-                            fn();
-                            return [2 /*return*/];
-                        });
-                    }); });
-                }
                 if (message.author.bot && message.channel.id == text_channel) {
                     if (message.content.includes("Saved response at ")) {
                         bot_response_path_1 = message.content.replace("Saved response at ", "");
@@ -194,7 +135,7 @@ client.on('message', function (message) { return __awaiter(void 0, void 0, void 
                                 setTimeout(function () {
                                     onCooldown = false;
                                 }, 8000);
-                                return [4 /*yield*/, message.channel.send("<@" + user + "> You can start speaking")];
+                                return [4 /*yield*/, message.channel.send("\"<@\" + user + \"> You can start speaking\"")];
                             case 2:
                                 _a.sent();
                                 voicechannel = message.member.voice.channel;
