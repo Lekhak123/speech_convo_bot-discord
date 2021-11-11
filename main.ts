@@ -7,8 +7,6 @@ import * as fs from 'fs';
 import { Readable } from 'stream';
 const SILENCE_FRAME = Buffer.from([0xF8, 0xFF, 0xFE]);
 const {prefix,token,text_channel}= require("./config.json");
-const tf = require('@tensorflow/tfjs-node')
-const nsfw = require('nsfwjs')
 const axios = require('axios') 
 const WaveFile = require('wavefile').WaveFile;
 class Silence extends Readable {
